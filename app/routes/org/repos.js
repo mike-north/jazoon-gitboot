@@ -1,19 +1,9 @@
 import Ember from 'ember';
-import fetch from 'ember-network/fetch';
 
 export default Ember.Route.extend({
-  model(params) {
+  model() {
     const org = this.modelFor('org');
-    return fetch(`https://emberconf-state-api.herokuapp.com/api/organizations/${org.id}/repositories`)
-      .then((data) => data.json())
-      .then((jsonData) => {
-        return jsonData.data.map((item) => {
-          return {
-            id: item.id,
-            name: item.attributes.name
-          };
-        });
-      });
+    return org.get('repositories');
   },
   setupController(controller) {
     this._super(...arguments);
