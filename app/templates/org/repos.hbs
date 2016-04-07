@@ -1,16 +1,11 @@
 <h1>{{org.name}} Repositories</h1>
+<p>{{favorites.items.length}} favorites!!</p>
 <p>
   {{link-to '< Go back to Orgs' 'index'}}
 </p>
 <ul class='repos'>
   {{#each model as |repo|}}
-  <li>
-      <i class="material-icons" onclick={{action 'toggleFavorite' repo}}>star_border</i>
-      {{link-to repo.name 'org.repo' repo.id}}
-      <span class="stargazers">
-        {{nice-number repo.stargazersCount}}
-      </span>
-  </li>
+    {{github-repo repo=repo}}
   {{/each}}
 </ul>
 {{outlet}}
