@@ -1,10 +1,10 @@
-<h1>My OrgName</h1>
+<h1>{{org.id}} Repositories</h1>
 <p>
   {{link-to '< Go back to Orgs' 'index'}}
 </p>
 <ul>
-  <li>{{link-to 'RepoName 1' 'org.repo' 0}}</li>
-  <li>{{link-to 'RepoName 2' 'org.repo' 1}}</li>
-  <li>{{link-to 'RepoName 3' 'org.repo' 2}}</li>
+  {{#each model as |repo|}}
+<li>{{link-to repo.id 'org.repo' repo.id}}</li>
+  {{/each}}
 </ul>
 {{outlet}}
