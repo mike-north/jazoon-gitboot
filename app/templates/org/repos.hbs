@@ -1,4 +1,4 @@
-<h1>{{org.id}} Repositories</h1>
+<h1>{{org.name}} Repositories</h1>
 <p>
   {{link-to '< Go back to Orgs' 'index'}}
 </p>
@@ -6,7 +6,7 @@
   {{#each model as |repo|}}
   <li>
       <i class="material-icons" onclick={{action 'toggleFavorite' repo}}>star_border</i>
-      {{link-to repo.id 'org.repo' repo.id}}
+      {{link-to repo.name 'org.repo' repo.id}}
   </li>
   {{/each}}
 </ul>
