@@ -2,9 +2,12 @@
 <p>
   {{link-to '< Go back to Orgs' 'index'}}
 </p>
-<ul>
+<ul class='repos'>
   {{#each model as |repo|}}
-<li>{{link-to repo.id 'org.repo' repo.id}}</li>
+  <li>
+      <i class="material-icons" onclick={{action 'toggleFavorite' repo}}>star_border</i>
+      {{link-to repo.id 'org.repo' repo.id}}
+  </li>
   {{/each}}
 </ul>
 {{outlet}}
