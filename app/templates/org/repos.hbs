@@ -7,6 +7,9 @@
   <li>
       <i class="material-icons" onclick={{action 'toggleFavorite' repo}}>star_border</i>
       {{link-to repo.name 'org.repo' repo.id}}
+      <span class="stargazers">
+        {{nice-number repo.stargazersCount}}
+      </span>
   </li>
   {{/each}}
 </ul>
